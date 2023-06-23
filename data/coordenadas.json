@@ -1,0 +1,62 @@
+[
+    {
+        "local": "auditorio",
+        "distância": "52.29",
+        "latitude": "-27.608355",
+        "longitude": "-48.633345"
+    },
+    {
+        "local": "labic",
+        "distância": "54.67",
+        "latitude": "-27.608155",
+        "longitude": "-48.633180"
+    },
+    {
+        "local": "acesso-quadra",
+        "distância": "57.93",
+        "latitude": "-27.608341",
+        "longitude": "-48.633263"
+    },
+    {
+        "local": "mesa",
+        "distância": "63.5",
+        "latitude": "-27.608439",
+        "longitude": "-48.633288"
+    },
+    {
+        "local": "laje-2",
+        "distância": "68.94",
+        "latitude": "-27.608464",
+        "longitude": "-48.633267"
+    },
+    {
+        "local": "biblioteca",
+        "distância": "82.9",
+        "latitude": "-27.608604",
+        "longitude": "-48.633205"
+    },
+    {
+        "local": "laje-1",
+        "distância": "84.11",
+        "latitude": "-27.608464",
+        "longitude": "-48.633043"
+    },
+    {
+        "local": "frente-ifsc",
+        "distância": "131.77",
+        "latitude": "-27.608117",
+        "longitude": "-48.632395"
+    },
+    {
+        "local": "frente-bistek",
+        "distância": "1014.65",
+        "latitude": "-27.606824",
+        "longitude": "-48.623519"
+    },
+    {
+        "local": "multiuso",
+        "distância": "2285.27",
+        "latitude": "-27.603642",
+        "longitude": "-48.610991"
+    }
+]
