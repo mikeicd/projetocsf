@@ -21,7 +21,8 @@
 ## Para cada ponto coletado, fazer uma simulação usando o software Radio Modile. Fazer comparações entre os pontos medidos e simulados
 
 |        local        | distância (m) |   latitude  |  longitude  |
-|---------------------|---------------|-------------|-------------|
+|:-------------------:|:-------------:|:-----------:|:-----------:|
+| gateway             |         -     | -27.60795022| -48.63369853 |
 | auditorio           |         52,29 | -27.608355  | -48.633345  |
 | labic-1             |         54,67 | -27.608155  | -48.633180  |
 | acesso-quadra       |         57,93 | -27.608341  | -48.633.263 |
@@ -42,7 +43,7 @@
 | portaria-frente     |        138,17 | -27.6081508 | -48.6323943 |
 | inicio-beira-mar    |          1999 | -27.6039654 | -48.6141063 |
 | fim-beira-mar       |          3015 | -27.6026611 | -48.6023764 |
-| abrao-beira-mar     |          3580 | -27.611220  | -48.597652  |
+| abraao-beira-mar    |          3580 | -27.611220  | -48.597652  |
 | posto-perto-ifsc    |        407,45 | -27.604444  | -48.632901  |
 | mundo-car           |          1970 | -27.5958768 | -48.6191918 |
 
