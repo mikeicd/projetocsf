@@ -9,10 +9,14 @@
   - [Conclusões](#conclusões)
 
 ## Determinar o expoente de perda (n)
+N = 2.87
 
 ### Definir 'd0' e 'P0'
+d0 = 8.75
+P0 = 98.18
 
 ### Fazer um processo de otimização para minimizar o MSE
+Feito
 
 ## Apresentar em um mapa a localização dos medidos
 
