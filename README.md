@@ -1,28 +1,6 @@
-# Relatório
-- [Relatório](#relatório)
-  - [Determinar o expoente de perda (n)](#determinar-o-expoente-de-perda-n)
-    - [Definir 'd0' e 'P0'](#definir-d0-e-p0)
-    - [Fazer um processo de otimização para minimizar o MSE](#fazer-um-processo-de-otimização-para-minimizar-o-mse)
-  - [Apresentar em um mapa a localização dos medidos](#apresentar-em-um-mapa-a-localização-dos-medidos)
-  - [Criar um mapa de 'calor' para visualização dos RSSI's](#criar-um-mapa-de-calor-para-visualização-dos-rssis)
-  - [Para cada ponto coletado, fazer uma simulação usando o software Radio Modile. Fazer comparações entre os pontos medidos e simulados](#para-cada-ponto-coletado-fazer-uma-simulação-usando-o-software-radio-modile-fazer-comparações-entre-os-pontos-medidos-e-simulados)
-  - [Conclusões](#conclusões)
+## Medições
 
-## Determinar o expoente de perda (n)
-N = 2.87
-
-### Definir 'd0' e 'P0'
-d0 = 8.75
-P0 = 98.18
-
-### Fazer um processo de otimização para minimizar o MSE
-Feito
-
-## Apresentar em um mapa a localização dos medidos
-
-## Criar um mapa de 'calor' para visualização dos RSSI's
-
-## Para cada ponto coletado, fazer uma simulação usando o software Radio Modile. Fazer comparações entre os pontos medidos e simulados
+### Coordenadas dos pontos medidos
 
 |        local        | distância (m) |   latitude  |  longitude  |
 |:-------------------:|:-------------:|:-----------:|:-----------:|
@@ -51,5 +29,18 @@ Feito
 | posto-perto-ifsc    |        407,45 | -27.604444  | -48.632901  |
 | mundo-car           |          1970 | -27.5958768 | -48.6191918 |
 
+### Mapa com pontos medidos
+
+## Simulação dos pontos no *Radio Mobile*
+
+## Comparação entre dados medidos e simulados
+## Determinar o expoente de perda (n)
+N = 2.87
+
+### Definir 'd0' e 'P0'
+d0 = 8.75
+P0 = 98.18
+
+## Criar um mapa de 'calor' para visualização dos RSSI's
 
 ## Conclusões
