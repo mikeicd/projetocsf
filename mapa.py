@@ -3,10 +3,10 @@ from folium.plugins import HeatMap
 import pandas as pd
 
 
-def cria_mapa(df: pd.DataFrame):
+def cria_mapa(df: pd.DataFrame, nome_mapa, zoom, radius, centro):
 
     # Criar um mapa com base em uma localização inicial
-    mapa = folium.Map(location=[-27.608355, -48.633345], zoom_start=15)
+    mapa = folium.Map(location=centro, zoom_start=zoom)
 
     # Lista de coordenadas de latitude e longitude
     coordenadas = []
@@ -18,12 +18,11 @@ def cria_mapa(df: pd.DataFrame):
         lon = dado['Long']
         pot = (dado['RSSI']-df['RSSI'].min()) / \
             (df['RSSI'].max() - df['RSSI'].min())
-        print(pot)
         coordenadas.append([lat, lon, pot])
         i += 1
 
     # Criação do objeto HeatMap com as coordenadas
-    heatmap = HeatMap(coordenadas,min_opacity=0.1, blur=1, radius=50, gradient={
+    heatmap = HeatMap(coordenadas,min_opacity=0.3, blur=1, radius=radius, gradient={
         '0.2': 'deepskyblue',
         '0.4': 'aqua',
         '0.6': 'lime',
@@ -35,4 +34,4 @@ def cria_mapa(df: pd.DataFrame):
     heatmap.add_to(mapa)
 
     # Salvar o mapa em um arquivo HTML
-    mapa.save('mapa_de_calor.html')
+    mapa.save(f'{nome_mapa}.html')
