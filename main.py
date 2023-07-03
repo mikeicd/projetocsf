@@ -40,23 +40,22 @@ def coleta_dados(path):
     return df_total
 
 
+def processa_dados(df):
+    id = df['Distc'].idxmin()
+    rssi = df.loc[id, 'RSSI']
+    dist = df.loc[id, 'Distc']
+    nome = df.loc[id, 'Nome']
+    print(f'{nome}')
+    parametro = perda_caminho(distancias=df['Distc'].to_list(
+    ), perdas=df['RSSI'].to_list(), d0=dist, pl_d0=rssi)
+    return parametro
+
+
 df_indoor = coleta_dados('data/indoor')
 df_outdoor = coleta_dados('data/outdoor')
 
-
-id_in_init = df_indoor['Distc'].idxmin()
-in_pl_min = df_indoor.loc[id_in_init, 'Pl']
-in_d_min = df_indoor.loc[id_in_init, 'Distc']
-parametro_indoor = perda_caminho(distancias=df_indoor['Distc'].to_list(
-), perdas=df_indoor['Pl'].to_list(), d0=in_d_min, pl_d0=in_pl_min)
-
-id_out_init = df_outdoor['Distc'].idxmin()
-out_pl_min = df_outdoor.loc[id_out_init, 'Pl']
-out_d_min = df_outdoor.loc[id_out_init, 'Distc']
-nome = df_outdoor.loc[id_out_init, 'Nome']
-print(f'{nome}')
-parametro_outdoor = perda_caminho(distancias=df_outdoor['Distc'].to_list(
-), perdas=df_outdoor['Pl'].to_list(), d0=out_pl_min, pl_d0=out_pl_min)
+parametro_indoor = processa_dados(df_indoor)
+parametro_outdoor = processa_dados(df_outdoor)
 
 print(parametro_indoor)
 print(parametro_outdoor)
