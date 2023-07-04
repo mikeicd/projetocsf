@@ -3,7 +3,7 @@
 ## Introdução
 
 
-As medições foram conduzidas por meio da utilização do dispositivo [IoT DevKit - LoRaWAN](https://www.robocore.net/tutoriais/iot-devkit-introducao) em uma série de campanhas. O objetivo dessas campanhas era coletar dados na área central de São José, em Santa Catarina. O gateway utilizado estava posicionado no topo da caixa d'água do IFSC-SJ, em uma altura aproximada de 15 metros. Neste repositório, você encontrará os dados coletados, bem como uma análise dos mesmos.
+As medições foram conduzidas por meio da utilização do dispositivo [IoT DevKit - LoRaWAN](https://www.robocore.net/tutoriais/iot-devkit-introducao) em uma série de campanhas. O objetivo dessas campanhas era coletar dados na área central de São José, em Santa Catarina, o gateway utilizado estava posicionado no topo da caixa d'água do IFSC-SJ, em uma altura aproximada de 15 metros. Neste repositório, você encontrará os dados coletados, bem como uma análise dos mesmos.
 
 ## Fundamentação teórica
 
@@ -91,7 +91,7 @@ A partir do método de minimização de erro MSE utilizado no código, o valor d
 | Indoor | 407,45     | 52,29   | 1,949 |
 | Outdoor| -77,8      | -80,89  | 2,519 |
 
-## Mapa de 'calor' 
+## Mapa de calor
 
 Com o N estimado pela minimização citada acima, foram obtidos estes valores de RSSI (estes valores utilizam uma variável aleatória gaussiana e podem mudar a cada execução).
 
@@ -106,3 +106,6 @@ Com o N estimado pela minimização citada acima, foram obtidos estes valores de
 | 3000      | -109.01609695 |
 | 3500      | -110.70196579 |
 
+Abaixo o mapa de calor:
+
+![](mapa.png)
