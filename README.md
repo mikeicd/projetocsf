@@ -2,8 +2,6 @@
 
 ## Introdução
 
-Foram realizadas campanhas de medição utilizando o end-device [IoT DevKit - LoRaWAN](https://www.robocore.net/tutoriais/iot-devkit-introducao), as medidas foram realizadas na área central de São José - SC e o gateway está localizado no topo da caixa de água do IFSC-SJ a cerca de 15 metros de altura. Este repositório apresenta os dados obtidos e uma análise sobre eles.
-
 
 As medições foram conduzidas por meio da utilização do dispositivo [IoT DevKit - LoRaWAN](https://www.robocore.net/tutoriais/iot-devkit-introducao) em uma série de campanhas. O objetivo dessas campanhas era coletar dados na área central de São José, em Santa Catarina. O gateway utilizado estava posicionado no topo da caixa d'água do IFSC-SJ, em uma altura aproximada de 15 metros. Neste repositório, você encontrará os dados coletados, bem como uma análise dos mesmos.
 
@@ -84,14 +82,27 @@ A tabela a seguir apresenta uma comparação dos valores de Potência Recebida (
 |multiuso        |-100,42 |114,31|-88,14       |102,03 |
 |mundo-car       |-109,83 |123,72|-87,18       |101,07 |
 |inicio-beira-mar|-98,87  |112,76|-85,98       |99,87  |
-## Determinar o expoente de perda (n)
-N = 2.87
 
-### Definir 'd0' e 'P0'
-d0 = 8.75
-P0 = 98.18
+## Parâmetros obtidos
+A partir do método de minimização de erro MSE utilizado no código, o valor do prâmetro N obtido está representado na tabela abaixo.
+
+|        | p0 ($dB$) | d0 (m)  | N     |
+|--------|------------|---------|-------|
+| Indoor | 407,45     | 52,29   | 1,949 |
+| Outdoor| -77,8      | -80,89  | 2,519 |
 
 ## Mapa de 'calor' 
 
+Com o N estimado pela minimização citada acima, foram obtidos estes valores de RSSI (estes valores utilizam uma variável aleatória gaussiana e podem mudar a cada execução).
 
-## Conclusões
+| Distância (m) | RSSI ($dB$)          |
+|-----------|---------------|
+| 1         | -21.42376652  |
+| 500       | -89.43267884  |
+| 1000      | -97.00470094  |
+| 1500      | -101.43679616 |
+| 2000      | -104.58218069 |
+| 2500      | -107.02225042 |
+| 3000      | -109.01609695 |
+| 3500      | -110.70196579 |
+
