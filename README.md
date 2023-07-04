@@ -71,26 +71,27 @@ Os pontos das medições *outdoor* foram utilizados para simulação com o *soft
 
 A tabela a seguir apresenta uma comparação dos valores de Potência Recebida (RSSI) e Perda de caminho (PL) entre o dados medidos e simulados, considerando somente os pontos *outdoor*.
 
-|       Local    |RSSI medido (dBm)|PL medido (dB)   |RSSI simulado (dBm)|PL simulado (dB)|
-|----------------|-------------|----------|-------------|-------|
-|laje-1          |-82,43  |96,32 |-61,59       |75,48  |
-|abrao-beira-mar |-102,60 |116,49|-101,96      |115,85 |
-|posto-perto-ifsc|-77,80  |91,69 |-76,91       |90,80  |
-|fim-beira-mar   |-108,05 |121,94|-91,91       |105,80 |
-|frente-ifsc     |-90,46  |104,34|-62,16       |76,05  |
-|frente-bistek   |-96,80  |110,69|-79,38       |93,27  |
-|multiuso        |-100,42 |114,31|-88,14       |102,03 |
-|mundo-car       |-109,83 |123,72|-87,18       |101,07 |
-|inicio-beira-mar|-98,87  |112,76|-85,98       |99,87  |
+| Local            | RSSI  medido (dBm) | PL  medido (dB) | RSSI  simulado² (dBm) | PL  simulado² (dB) | RSSI calculado  (N = 2,519) (dBm) | RSSI calculado + desvio¹ |
+|------------------|--------------------|-----------------|----------------------|-------------------|-----------------------------|---------------------------------|
+| laje-1           | -82,43             | 96,32           | -61,59               | 75,48             | -96,66                      | -96,31                          |
+| abrao-beira-mar  | -102,60            | 116,49          | -101,96              | 115,85            | -101,57                     | -97,49                          |
+| posto-perto-ifsc | -77,80             | 91,69           | -76,91               | 90,80             | -99,69                      | -90,44                          |
+| fim-beira-mar    | -108,05            | 121,94          | -91,91               | 105,80            | -65,45                      | -69,03                          |
+| frente-ifsc      | -90,46             | 104,34          | -62,16               | 76,05             | -60,53                      | -81,88                          |
+| frente-bistek    | -96,80             | 110,69          | -79,38               | 93,27             | -87,78                      | -84,82                          |
+| multiuso         | -100,42            | 114,31          | -88,14               | 102,03            | -95,03                      | -98,35                          |
+| mundo-car        | -109,83            | 123,72          | -87,18               | 101,07            | -95,19                      | -108,20                         |
+| inicio-beira-mar | -98,87             | 112,76          | -85,98               | 99,87             | -77.8                       | -91,53                          |
+> 1- Valores obtidos adicionando uma variável randômica gaussiana com média 0 e desvio padrão de 10,91 ao valor calculado.
+> 2- Simulação realizada no software *Radio Mobile* 
 
 ## Parâmetros obtidos
-A partir do método de minimização de erro MSE utilizado no código, o valor do prâmetro N obtido está representado na tabela abaixo.
+A partir do método de minimização de erro MSE utilizado no código, o valor do parâmetro N obtido está representado na tabela abaixo.
 
 |        | p0 ($dB$) | d0 (m)  | N     |
 |--------|------------|---------|-------|
-| Indoor | 407,45     | 52,29   | 1,949 |
 | Outdoor| -77,8      | -80,89  | 2,519 |
-
+> Não houveram dados suficientes para estimar um fator N para os dados Indoor
 ## Mapa de calor
 
 Com o N estimado pela minimização citada acima, foram obtidos estes valores de RSSI (estes valores utilizam uma variável aleatória gaussiana e podem mudar a cada execução).

@@ -53,23 +53,23 @@ def processa_dados(df: pd.DataFrame, d0, rssi_0):
     return parametro
     
 
-df_indoor = coleta_dados('data/indoor')
+# df_indoor = coleta_dados('data/indoor')
 df_outdoor = coleta_dados('data/outdoor')
 
-parametro_indoor = processa_dados(df_indoor, 52.29, -80.888889)
+# parametro_indoor = processa_dados(df_indoor, 52.29, -80.888889)
 parametro_outdoor = processa_dados(df_outdoor, 407.45, -77.800000)
 
-print(parametro_indoor)
+# print(parametro_indoor)
 print(parametro_outdoor)
 
 
 
-cria_mapa(
-    df=df_indoor,
-    nome_mapa='mapa_indoor',
-    zoom=100,
-    radius=10,
-    centro=[-27.608355, -48.633345])
+# cria_mapa(
+#     df=df_indoor,
+#     nome_mapa='mapa_indoor',
+#     zoom=100,
+#     radius=10,
+#     centro=[-27.608355, -48.633345])
 
 cria_mapa(
     df=df_outdoor,
@@ -79,8 +79,18 @@ cria_mapa(
     centro=[-27.606824, -48.623519])
 
 
+
+print('\n\nPrevisão a cada 500 metros')
 distancias = np.arange(1, 3502, 500)
 rssis = modelo(distancias=distancias,N=2.519,d0=407.45,pl_d0=-77.800000)
 std = df_outdoor['RSSI'].std()
-rssis = rssis + np.random.normal(0, std) # Soma da variável aleatória gaussiana
-print(f'valores previstos: {rssis}')
+print(std)
+for rssi in rssis:
+    rssi = rssi + np.random.normal(0, std) # Soma da variável aleatória gaussiana
+    print(f'{rssi}')
+
+print('\n\nPrevisão das distancias medidas')
+rssis_calculado = modelo(distancias= df_outdoor['Distc'], N= 2.519, d0=407.45,pl_d0=-77.800000)
+for rssi in rssis_calculado:
+    rssi = rssi + np.random.normal(0, std) # Soma da variável aleatória gaussiana
+    print(f'{rssi}')
