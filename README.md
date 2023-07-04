@@ -82,7 +82,7 @@ A tabela a seguir apresenta uma comparação dos valores de Potência Recebida (
 | multiuso         | -100,42            | 114,31          | -88,14               | 102,03            | -95,03                      | -98,35                          |
 | mundo-car        | -109,83            | 123,72          | -87,18               | 101,07            | -95,19                      | -108,20                         |
 | inicio-beira-mar | -98,87             | 112,76          | -85,98               | 99,87             | -77.8                       | -91,53                          |
-> 1. Valores obtidos adicionando uma variável randômica gaussiana com média 0 e desvio padrão de 10,91 ao valor calculado.
+> 1. Valores obtidos adicionando uma variável aleatória gaussiana de média 0 e desvio padrão de 10,91 ao valor calculado, então podem mudar a cada execução.
 > 2. Simulação realizada no software *Radio Mobile* 
 
 ## Parâmetros obtidos
