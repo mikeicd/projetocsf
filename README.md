@@ -1,3 +1,38 @@
+# Campanha de medição LoRaWan com gateway do campus IFSC-SJ
+
+## Introdução
+
+Foram realizadas campanhas de medição utilizando o end-device [IoT DevKit - LoRaWAN](https://www.robocore.net/tutoriais/iot-devkit-introducao), as medidas foram realizadas na área central de São José - SC e o gateway está localizado no topo da caixa de água do IFSC-SJ a cerca de 15 metros de altura. Este repositório apresenta os dados obtidos e uma análise sobre eles.
+
+
+As medições foram conduzidas por meio da utilização do dispositivo [IoT DevKit - LoRaWAN](https://www.robocore.net/tutoriais/iot-devkit-introducao) em uma série de campanhas. O objetivo dessas campanhas era coletar dados na área central de São José, em Santa Catarina. O gateway utilizado estava posicionado no topo da caixa d'água do IFSC-SJ, em uma altura aproximada de 15 metros. Neste repositório, você encontrará os dados coletados, bem como uma análise dos mesmos.
+
+## Fundamentação teórica
+
+### Modelo de Perda de Caminho Log-Distância
+
+Os modelos de propagação teóricos e baseados em medições indicam que a potência média do sinal recebido diminui de forma logarítmica à medida que a distância aumenta, tanto em canais de rádio internos como externos.
+
+ A perda de caminho média em grande escala para uma separação transmissor ($T$) e receptor ($R$),  qualquer $T-R$ é expressa como a função da distância usando um expoente de perda de caminho, $n$. Como na equação abaixo:
+
+
+
+$$ \overline{PL}(dB) = \overline{PL}(d_0) + 10n\log_{}\left(\frac{d}{d_0}\right)
+$$
+
+onde:
+- $\overline{PL}(dB)$ é a perda de caminho estimado em $dB$
+- $\overline{PL}(d_0)$ é a perda de caminho na distância de referência em $dB$
+- $n$ é expoente de perda de caminho que indica a velocidade com a qual essa perda aumenta com relação à distância e depende do ambiente de propagação específico.
+- $d_0$ é a distância de referência próxima determinada pelas medições perto do transmissor.
+- $d$ é a distância de separação $T-R$
+- As barras na equação indicam a média conjunta de todos os valores possíveis de perda de caminho para determinado valor de $d$.
+
+### Sombreamento log-normal
+
+<!-- a equação anterior não considera o fato de o ruído ambiental ao redor pode ser diferente em dois locais distintos tendo a mesma separação $T-R$, o que leva a sinais medidos diferentes do valor médio da equação anterior -->
+
+A distribuição log-normal descreve os efeitos aleatórios do sombreamento, que ocorrem em vários locais próximos que possuem a separação $T-R$ , mas com diferentes níveis de ruído no caminho de propagação. o sombreamento log-normal implica que os níveis de sinal medidos em uma separação $T-R$ específica seguem uma distribuição gaussiana (normal) em torno da média que depende da distância.
 ## Medições
 
 Nas tabelas a seguir são apreentados os valores de latitude e longitude dos pontos de medições.
