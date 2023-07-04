@@ -1,10 +1,15 @@
 import os
 import pandas as pd
+import numpy as np
 from calculo_perda import perda_caminho
 from mapa import cria_mapa
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 PotTx = 13.89
+
+
+def modelo(distancias, N, d0, pl_d0):
+    return pl_d0 - (10 * N * np.log10(np.divide(distancias, d0)))
 
 
 def coleta_dados(path):
@@ -40,25 +45,32 @@ def coleta_dados(path):
     return df_total
 
 
-def processa_dados(df):
-    id = df['Distc'].idxmin()
-    rssi = df.loc[id, 'RSSI']
-    dist = df.loc[id, 'Distc']
-    nome = df.loc[id, 'Nome']
-    print(f'{nome}')
+def processa_dados(df: pd.DataFrame, d0, rssi_0):
     parametro = perda_caminho(distancias=df['Distc'].to_list(
-    ), perdas=df['RSSI'].to_list(), d0=dist, pl_d0=rssi)
+    ), perdas=df['RSSI'].to_list(), d0=d0, pl_d0=rssi_0)
     return parametro
 
+
+def cria_model(N, d0, rssi):
+    df_coord = pd.read_json("./data/calc/coordenadas.json")
+    df_coord['rssi'] = modelo(N=N,distancias=df_coord['distancia'].to_list(),d0=d0, pl_d0=rssi)
+    df_coord.columns = ['Nome','Dist','Lat','Long','RSSI']
+    print(df_coord.head())
+    return df_coord
+    
+    
 
 df_indoor = coleta_dados('data/indoor')
 df_outdoor = coleta_dados('data/outdoor')
 
-parametro_indoor = processa_dados(df_indoor)
-parametro_outdoor = processa_dados(df_outdoor)
+parametro_indoor = processa_dados(df_indoor, 52.29, -80.888889)
+parametro_outdoor = processa_dados(df_outdoor, 407.45, -77.800000)
 
 print(parametro_indoor)
 print(parametro_outdoor)
+
+
+df_novo = cria_model(2.51, 407.45, -77.800000)
 
 cria_mapa(
     df=df_indoor,
@@ -70,6 +82,13 @@ cria_mapa(
 cria_mapa(
     df=df_outdoor,
     nome_mapa='mapa_outdoor',
+    zoom=15,
+    radius=30,
+    centro=[-27.606824, -48.623519])
+
+cria_mapa(
+    df=df_novo,
+    nome_mapa='mapa_novo',
     zoom=15,
     radius=30,
     centro=[-27.606824, -48.623519])

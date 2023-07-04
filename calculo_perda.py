@@ -16,8 +16,8 @@ def perda_caminho(distancias, perdas, d0, pl_d0):
     return result
 
 
-# dist = [100, 200, 1000, 3000]
-# rssi = [0, -20, -35, -70]
+dist = [100, 200, 1000, 3000]
+rssi = [0, -20, -35, -70]
 
-# n = perda_caminho(distancias=dist, perdas=rssi, d0=100, pl_d0= 0)
-# print(n)
+n = perda_caminho(distancias=dist, perdas=rssi, d0=100, pl_d0= 0)
+print(n)
