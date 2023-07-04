@@ -67,9 +67,9 @@ Nas tabelas a seguir são apreentados os valores de latitude e longitude dos pon
 
 Os pontos das medições *outdoor* foram utilizados para simulação com o *software* *Radio Mobile* e os resultados estão em arquivos html no diretório [radio-mobile](./radio-mobile/).
 
-## Comparação entre dados medidos e simulados
+## Comparação entre dados medidos e simulados e calculados
 
-A tabela a seguir apresenta uma comparação dos valores de Potência Recebida (RSSI) e Perda de caminho (PL) entre o dados medidos e simulados, considerando somente os pontos *outdoor*.
+A tabela a seguir apresenta uma comparação dos valores de Potência Recebida (RSSI) e Perda de caminho (PL) entre o dados medidos, calculados e simulados, considerando somente os pontos *outdoor*.
 
 | Local            | RSSI  medido (dBm) | PL  medido (dB) | RSSI  simulado² (dBm) | PL  simulado² (dB) | RSSI calculado  (N = 2,519) (dBm) | RSSI calculado + desvio¹ |
 |------------------|--------------------|-----------------|----------------------|-------------------|-----------------------------|---------------------------------|
